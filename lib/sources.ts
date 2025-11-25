@@ -165,19 +165,10 @@ export function searchResultsToChunks(results: any): Chunk[] {
         return [];
     }
 
-    console.log("searchResultsToChunks - Processing", records.length, "records");
-
     return records
         .map((record: any, index: number) => {
             const fields = record.fields || record.values || record.data || {};
             const metadata = record.metadata || {};
-
-            console.log(`searchResultsToChunks - Record ${index}:`, {
-                fields,
-                metadata,
-                recordKeys: Object.keys(record),
-                recordType: typeof record
-            });
 
             let classNo: number | undefined = undefined;
             const classNoValue = fields.class_no !== undefined ? fields.class_no : (metadata.class_no !== undefined ? metadata.class_no : undefined);
@@ -199,14 +190,10 @@ export function searchResultsToChunks(results: any): Chunk[] {
                 order: fields.order !== undefined ? fields.order : (metadata.order !== undefined ? metadata.order : 0),
             };
 
-            console.log(`searchResultsToChunks - Chunk data ${index}:`, chunkData);
-
             try {
                 const parsed = chunkSchema.parse(chunkData);
-                console.log(`searchResultsToChunks - Successfully parsed chunk ${index}`);
                 return parsed;
             } catch (error) {
-                console.warn(`searchResultsToChunks - Failed to parse chunk ${index}:`, error, chunkData);
                 return null;
             }
         })

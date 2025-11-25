@@ -11,14 +11,12 @@ export const webSearch = tool({
   }),
   execute: async ({ query }) => {
     try {
-      console.log('Searching the web for:', query);
       const { results } = await exa.search(query, {
         contents: {
           text: true,
         },
         numResults: 3,
       });
-      console.log('Search results:', results);
 
       return results.map(result => ({
         title: result.title,

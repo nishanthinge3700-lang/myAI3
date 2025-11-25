@@ -10,8 +10,6 @@ export const maxDuration = 30;
 export async function POST(req: Request) {
     const { messages }: { messages: UIMessage[] } = await req.json();
 
-    console.log('Messages:', JSON.stringify(messages, null, 2));
-
     const latestUserMessage = messages
         .filter(msg => msg.role === 'user')
         .pop();
