@@ -206,7 +206,7 @@ export default function Chat() {
                             id="chat-form-message"
                             className="h-15 pr-15 pl-5
     rounded-[20px]
-    bg-[#95B2F5]            
+    bg-[#95B2F6]            
     text-white              /* white text */
     placeholder-white/90    /* very light placeholder (almost white) */
     border border-[#0A3D91] /* border same as box */
