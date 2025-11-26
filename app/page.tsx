@@ -189,7 +189,7 @@ export default function Chat() {
         <div className="fixed bottom-0 left-0 right-0 z-50 bg-linear-to-t from-background via-background/50 to-transparent dark:bg-black overflow-visible pt-13">
           <div className="w-full px-5 pt-5 pb-1 items-center flex justify-center relative overflow-visible">
             <div className="message-fade-overlay" />
-            <div className="max-w-3xl w-full">
+            <div className="max-w-5xl w-full">
               <form id="chat-form" onSubmit={form.handleSubmit(onSubmit)}>
                 <FieldGroup>
                   <Controller
@@ -204,11 +204,11 @@ export default function Chat() {
                           <Input
                             {...field}
                             id="chat-form-message"
-                            className="h-15 pr-15 pl-5
+                            className="h-13 pr-15 pl-5
     rounded-[20px]
-    bg-[#95B2F6]            
-    text-white              /* white text */
-    placeholder-white/90    /* very light placeholder (almost white) */
+    bg-[#e1e8f7]            
+    text-black              /* white text */
+    placeholder-white/60    /* softer white placeholder */
     border border-[#0A3D91] /* border same as box */
     focus:outline-none
     focus:ring-2 focus:ring-blue-300/40 /* nice highlight */
@@ -226,7 +226,7 @@ export default function Chat() {
                           />
                           {(status == "ready" || status == "error") && (
                             <Button
-                              className="absolute right-3 top-3 rounded-full"
+                              className="absolute right-3 top-3 rounded-full bg-[#0A3D91] text-white hover:bg-[#082b6f]"
                               type="submit"
                               disabled={!field.value.trim()}
                               size="icon"
