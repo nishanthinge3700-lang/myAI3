@@ -272,4 +272,4 @@ async function analyzeImageBuffer(buf: Buffer, filename: string, mimeType: strin
   return result.toUIMessageStreamResponse({
     sendReasoning: true,
   });
-}
+  }
