@@ -31,7 +31,7 @@ function getDateAndTime(): string {
 export const DATE_AND_TIME = getDateAndTime();
 
 export const AI_NAME = "Alchemista";
-export const OWNER_NAME = "Rahil & Nishant";
+export const OWNER_NAME = "Rahil Gosalia & Nishant Hinge";
 
 export const WELCOME_MESSAGE = `Hello! I'm ${AI_NAME}, an Chemical Engineering Copilot Assistant created by ${OWNER_NAME}. I can help you with:
 
