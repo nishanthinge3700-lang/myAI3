@@ -24,7 +24,7 @@ export default function QuickActions(): JSX.Element {
                      bg-blue-600 text-white hover:translate-y-[-2px] hover:shadow-lg transition-transform"
         >
           {/* small SVG icon */}
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path d="M12 2L19 8v6a7 7 0 01-14 0V8l7-6z" stroke="white" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
           <span>{l.label}</span>
