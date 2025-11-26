@@ -3,7 +3,7 @@ import { Response } from "@/components/ai-elements/response";
 
 export function UserMessage({ message }: { message: UIMessage }) {
     return (
-       <div className="flex w-full">
+        <div className="flex w-full">
       <div className="ml-auto max-w-[80%]">
         <div
           className="
