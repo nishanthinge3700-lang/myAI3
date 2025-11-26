@@ -208,7 +208,7 @@ export default function Chat() {
     rounded-[20px]
     bg-[#95B2F5]            
     text-white              /* white text */
-    placeholder-white/60    /* softer white placeholder */
+    placeholder-white/90    /* very light placeholder (almost white) */
     border border-[#0A3D91] /* border same as box */
     focus:outline-none
     focus:ring-2 focus:ring-blue-300/40 /* nice highlight */
@@ -254,7 +254,7 @@ export default function Chat() {
             </div>
           </div>
           <div className="w-full px-5 py-3 items-center flex justify-center text-xs text-muted-foreground">
-            © {new Date().getFullYear()} {OWNER_NAME}&nbsp;<Link href="/terms" className="underline">Terms of Use</Link>&nbsp;Powered by&nbsp;<Link href="https://ringel.ai/" className="underline">Ringel.AI</Link>
+            © {new Date().getFullYear()} {OWNER_NAME}&nbsp;<Link href="/terms" className="underline">Terms of Use</Link>&nbsp;Powered by&nbsp;<Link href="https://ringel.ai/" className="underline">Rin[...]
           </div>
         </div>
       </main>
