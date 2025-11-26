@@ -31,9 +31,16 @@ function getDateAndTime(): string {
 export const DATE_AND_TIME = getDateAndTime();
 
 export const AI_NAME = "Alchemista";
-export const OWNER_NAME = "Rahil & Nishant";
+export const OWNER_NAME = "Rahil Gosalia & Nishant Hinge";
 
-export const WELCOME_MESSAGE = `Yo Bro, What's up! I'm ${AI_NAME}, an AI assistant created by ${OWNER_NAME}. How can I be of assistance`
+export const WELCOME_MESSAGE = `Hello! I'm ${AI_NAME}, a Chemical Engineering Copilot Assistant, created by ${OWNER_NAME}. I can help you with:
+
+Troubleshooting process and equipment issues
+Explaining P&IDs, SOPs, and equipment tags
+Analyzing deviations and safety concerns
+Supporting design changes, debottlenecking, and MOC
+Running quick engineering calculations
+How can I assist you today?`
 
 export const CLEAR_CHAT_TEXT = "New";
 
