@@ -117,11 +117,6 @@
     @apply border-border outline-ring/50;
   }
   body {
-    background-image: url("/factory-bg.png");
-  background-size: cover;            /* fill screen */
-  background-position: center;       /* center the plant */
-  background-repeat: no-repeat;      /* no tiling */
-  background-attachment: fixed;      /* parallax effect (nice) */
   color: var(--foreground);          /* keep text readable */;
   }
 
