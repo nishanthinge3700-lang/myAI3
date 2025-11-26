@@ -33,7 +33,19 @@ export const DATE_AND_TIME = getDateAndTime();
 export const AI_NAME = "Alchemista";
 export const OWNER_NAME = "Rahil & Nishant";
 
-export const WELCOME_MESSAGE = `Hello! I'm ${AI_NAME}, an AI assistant created by ${OWNER_NAME}.`
+export const WELCOME_MESSAGE = `Hello! I'm ${AI_NAME}, an AI assistant created by ${OWNER_NAME}. Welcome! I’m your Chemical Engineering Copilot. I can help you with:
+
+Troubleshooting process and equipment issues
+
+Explaining P&IDs, SOPs, and equipment tags
+
+Analyzing deviations and safety concerns
+
+Supporting design changes, debottlenecking, and MOC
+
+Running quick engineering calculations
+
+How can I assist you today?`;
 
 export const CLEAR_CHAT_TEXT = "New";
 
