@@ -35,11 +35,12 @@ export const OWNER_NAME = "Rahil Gosalia & Nishant Hinge";
 
 export const WELCOME_MESSAGE = `Hello! I'm ${AI_NAME}, a Chemical Engineering Copilot Assistant, created by ${OWNER_NAME}. I can help you with:
 
-Troubleshooting process and equipment issues
-Explaining P&IDs, SOPs, and equipment tags
-Analyzing deviations and safety concerns
-Supporting design changes, debottlenecking, and MOC
-Running quick engineering calculations
+1. Troubleshooting process and equipment issues
+2. Explaining P&IDs, SOPs, and equipment tags
+3. Analyzing deviations and safety concerns
+4. Supporting design changes, debottlenecking, and MOC
+5.Running quick engineering calculations
+
 How can I assist you today?`
 
 export const CLEAR_CHAT_TEXT = "New";
