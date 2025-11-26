@@ -204,7 +204,7 @@ export default function Chat() {
                           <Input
                             {...field}
                             id="chat-form-message"
-                            className="h-15 pr-15 pl-5 bg-card rounded-[20px]"
+                            className="h-15 pr-15 pl-5 bg-card rounded-[20px] border border-gray-300 dark:border-neutral-700 focus:outline-none focus:ring-2 focus:ring-blue-500/40 shadow-sm"
                             placeholder="Type your message here..."
                             disabled={status === "streaming"}
                             aria-invalid={fieldState.invalid}
