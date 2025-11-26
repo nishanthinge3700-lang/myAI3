@@ -1,5 +1,6 @@
 "use client";
 
+import { Paperclip } from "lucide-react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Controller, useForm } from "react-hook-form";
 import { toast } from "sonner";
@@ -201,10 +202,61 @@ export default function Chat() {
                           Message
                         </FieldLabel>
                         <div className="relative h-13">
+                          {/* File Upload Button (left of input) */}
+<label
+  htmlFor="file-upload"
+  className="absolute left-4 top-1/2 -translate-y-1/2 cursor-pointer p-1 rounded-full hover:bg-gray-200/30 z-10"
+  title="Upload a file"
+>
+  <Paperclip className="w-5 h-5 text-gray-600" />
+</label>
+
+<input
+  id="file-upload"
+  type="file"
+  accept=".pdf,.png,.jpg,.jpeg,.txt,.csv,.xlsx"
+  className="hidden"
+  onChange={(e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    if (file.size > 10 * 1024 * 1024) { // 10 MB limit
+      toast.error("File too large (max 10MB)");
+      e.target.value = "";
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = () => {
+      const base64 = reader.result as string;
+
+      // <-- IMPORTANT: use `metadata` (not `data`) to avoid TypeScript errors
+      sendMessage({
+        text: `I uploaded a file named "${file.name}". Please analyze it.`,
+        metadata: {
+          fileName: file.name,
+          fileType: file.type,
+          fileSize: file.size,
+          fileContent: base64,
+        },
+      });
+
+      toast.success(`Uploaded ${file.name}`);
+      e.target.value = "";
+    };
+
+    reader.onerror = () => {
+      toast.error("Failed to read file.");
+      e.target.value = "";
+    };
+
+    reader.readAsDataURL(file);
+  }}
+/>
                           <Input
                             {...field}
                             id="chat-form-message"
-                            className="h-13 pr-15 pl-5
+                            className="h-13 pr-15 pl-14
     rounded-[20px]
     bg-[#e1e8f7]            
     text-black              /* white text */
@@ -226,7 +278,7 @@ export default function Chat() {
                           />
                           {(status == "ready" || status == "error") && (
                             <Button
-                              className="absolute right-3 top-3 rounded-full bg-[#0A3D91] text-white hover:bg-[#082b6f]"
+                              className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-[#0A3D91] text-white hover:bg-[#082b6f]"
                               type="submit"
                               disabled={!field.value.trim()}
                               size="icon"
@@ -236,7 +288,7 @@ export default function Chat() {
                           )}
                           {(status == "streaming" || status == "submitted") && (
                             <Button
-                              className="absolute right-2 top-2 rounded-full"
+                              className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full"
                               size="icon"
                               onClick={() => {
                                 stop();
