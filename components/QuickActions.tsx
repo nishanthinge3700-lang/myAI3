@@ -7,7 +7,7 @@ const LINKS = [
   { label: "Process Safety (or resource 3)", href: "URL_3" },
 ];
 
-export default function QuickActions(): JSX.Element {
+export default function QuickActions() {
   return (
     <nav
       aria-label="Quick action links for chemical engineers"
@@ -33,3 +33,4 @@ export default function QuickActions(): JSX.Element {
     </nav>
   );
 }
+
