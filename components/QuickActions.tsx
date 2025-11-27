@@ -11,10 +11,10 @@ export default function QuickActions() {
   return (
     <div
       className="
-        fixed top-16 left-4 z-[9999] 
+        fixed top-22 left-4 z-[9999] 
         flex flex-col gap-2 
         border border-gray-300 rounded-lg bg-white/90 backdrop-blur-sm
-        shadow-sm p-2 max-w-[140px]
+        shadow-sm p-2 max-w-[200x]
       "
     >
       {LINKS.map((l) => (
@@ -34,22 +34,8 @@ export default function QuickActions() {
             transition-all
           "
         >
-          {/* small SVG icon */}
-          <svg
-            width="12"
-            height="12"
-            viewBox="0 0 24 24"
-            fill="none"
-            aria-hidden="true"
-          >
-            <path
-              d="M12 2L19 8v6a7 7 0 01-14 0V8l7-6z"
-              stroke="white"
-              strokeWidth="1.2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
+  
+         
 
           <span>{l.label}</span>
         </a>
@@ -57,4 +43,5 @@ export default function QuickActions() {
     </div>
   );
 }
+
 
