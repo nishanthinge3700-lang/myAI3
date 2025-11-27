@@ -2,19 +2,19 @@
 import React from "react";
 
 const LINKS = [
-  { label: "AIChE (or resource 1)", href: "URL_1" },
-  { label: "Engineering Toolbox (or resource 2)", href: "URL_2" },
-  { label: "Process Safety (or resource 3)", href: "URL_3" },
+  { label: "Steam Tables", href: "https://pages.mtu.edu/~tbco/cm3230/steamtables.pdf" },
+  { label: "ChemEng Toolbox", href: "https://www.engineeringtoolbox.com/" },
+  { label: "Materials Safety", href: "https://pubchem.ncbi.nlm.nih.gov/" },
 ];
 
 export default function QuickActions() {
   return (
     <div
       className="
-        fixed top-4 left-4 z-[9999] 
+        fixed top-16 left-4 z-[9999] 
         flex flex-col gap-2 
         border border-gray-300 rounded-lg bg-white/90 backdrop-blur-sm
-        shadow-sm p-2
+        shadow-sm p-2 max-w-[140px]
       "
     >
       {LINKS.map((l) => (
@@ -57,3 +57,4 @@ export default function QuickActions() {
     </div>
   );
 }
+
