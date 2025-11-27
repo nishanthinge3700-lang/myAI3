@@ -24,7 +24,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 import QuickSidebar from "./QuickSidebar";
-import PdfUploader from "@/components/PdfUploader";
 
 /* -------------------- Zod Schema -------------------- */
 
@@ -134,30 +133,6 @@ export default function Chat() {
     sendMessage({ text });
   }
 
-  /* -------- Handle PdfUploader events (wires uploader -> chat) -------- */
-
-  useEffect(() => {
-    function handlePdfUploaded(e: any) {
-      const meta = e?.detail;
-      if (!meta) return;
-
-      // Send same style message as the inline file input does
-      sendMessage({
-        text: `I uploaded a file named "${meta.fileName}". Please analyze it.`,
-        metadata: {
-          fileName: meta.fileName,
-          fileType: meta.fileType,
-          fileSize: meta.fileSize,
-          fileContent: meta.fileContent,
-        },
-      });
-    }
-
-    window.addEventListener("pdf-uploaded", handlePdfUploaded);
-    return () => window.removeEventListener("pdf-uploaded", handlePdfUploaded);
-  }, [sendMessage]);
-
-
   /* -------------------- UI Layout -------------------- */
 
   return (
@@ -199,15 +174,8 @@ export default function Chat() {
           </ChatHeader>
         </div>
 
-        {/* PDF Uploader (placed below header, visible without scrolling) */}
-        <div className="fixed top-[76px] left-28 right-0 z-40 px-5">
-          <div className="max-w-5xl mx-auto">
-            <PdfUploader />
-          </div>
-        </div>
-
         {/* MESSAGES */}
-        <div className="h-screen overflow-y-auto px-5 py-4 w-full pt-[170px] pb-[150px]">
+        <div className="h-screen overflow-y-auto px-5 py-4 w-full pt-[88px] pb-[150px]">
           <div className="flex flex-col items-center justify-end min-h-full">
 
             {isClient ? (
