@@ -6,7 +6,6 @@ export default function QuickSidebar() {
   return (
     <aside className="w-28 bg-gray-50 border-r border-gray-200 p-4 flex flex-col items-center gap-6 fixed left-0 top-0 h-screen pt-28 z-40">
       <h2 className="text-xs font-semibold uppercase text-gray-600 tracking-wide">
-        Quick Links
       </h2>
 
       {/* Steam Tables */}
@@ -19,7 +18,7 @@ export default function QuickSidebar() {
         aria-label="Steam Tables"
       >
         <span className="quick-icon" aria-hidden>💧</span>
-        <span className="quick-label">Steam</span>
+        <span className="quick-label">Steam Tables</span>
       </a>
 
       {/* ChemEng Toolbox */}
@@ -45,8 +44,9 @@ export default function QuickSidebar() {
         aria-label="Material Safety"
       >
         <span className="quick-icon" aria-hidden>⚠️</span>
-        <span className="quick-label">Safety</span>
+        <span className="quick-label">Material Safety</span>
       </a>
     </aside>
   );
 }
+
