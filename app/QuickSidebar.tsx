@@ -23,7 +23,7 @@ export default function QuickSidebar() {
         aria-label="Steam Tables"
       >
         <span className="quick-icon" aria-hidden>💧</span>
-        <span className="quick-label">Steam         Tables</span>
+        <span className="quick-label">Steam Tables & Handbook</span>
       </a>
 
       {/* ChemEng Toolbox */}
