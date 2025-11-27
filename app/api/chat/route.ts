@@ -94,24 +94,9 @@ export async function POST(req: Request) {
 
       const wantsAnalyzeNow = /analyz|analyze|analysis|\bocr\b|\b(3)\b/i.test(latestUserText);
 
-      if (!wantsAnalyzeNow && !latestUserAfter) {
-        const stream = createUIMessageStream({
-          execute({ writer }) {
-            const textId = 'file-received-text';
-            writer.write({ type: 'start' });
-
-            writer.write({ type: 'text-start', id: textId });
-            writer.write({
-              type: 'text-delta',
-              id: textId,
-              delta: `Received "${fileName}" (${sizeKB} KB, ${mime}). I can (1) summarize text, (2) run OCR, (3) analyze images, or (4) extract tables. What would you like me to do with this file?`,
-            });
-            writer.write({ type: 'text-end', id: textId });
-            writer.write({ type: 'finish' });
-          },
-        });
-        return createUIMessageStreamResponse({ stream });
-      }
+      // NOTE: The explicit verbose acknowledgement has been removed by design.
+      // If the user explicitly asks to analyze (wantsAnalyzeNow) we'll proceed to analysis below.
+      // Otherwise we fall through to the normal LLM flow so the assistant doesn't send the long redundant message.
     }
 
     // find latest user message after file message
@@ -242,3 +227,4 @@ export async function POST(req: Request) {
     sendReasoning: true,
   });
 }
+
