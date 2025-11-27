@@ -23,7 +23,7 @@ import { AI_NAME, CLEAR_CHAT_TEXT, OWNER_NAME, WELCOME_MESSAGE } from "@/config"
 import Image from "next/image";
 import Link from "next/link";
 
-
+import QuickSidebar from "./QuickSidebar";
 
 /* -------------------- Zod Schema -------------------- */
 
