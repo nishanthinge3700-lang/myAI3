@@ -23,8 +23,6 @@ import { AI_NAME, CLEAR_CHAT_TEXT, OWNER_NAME, WELCOME_MESSAGE } from "@/config"
 import Image from "next/image";
 import Link from "next/link";
 
-/// ⭐ Correct import — matches your file location
-import QuickSidebar from "@/app/QuickSidebar";
 
 
 /* -------------------- Zod Schema -------------------- */
@@ -144,7 +142,7 @@ export default function Chat() {
     <div className="flex h-screen font-sans dark:bg-black">
 
       {/* LEFT SIDEBAR */}
-      <QuickSidebar onAction={handleQuickAction} />
+      <QuickSidebar/>
 
       {/* MAIN CHAT */}
       <main className="flex-1 ml-28 relative">
