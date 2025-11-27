@@ -1,5 +1,3 @@
-and paste this code in that
-
 'use client';
 
 import React from "react";
@@ -21,7 +19,7 @@ export default function QuickSidebar({ onAction }: Props) {
         aria-label="P&ID Overview"
         title="P&ID Overview"
       >
-        <span className="quick-icon" aria-hidden>📘</span>
+        <span className="quick-icon" aria-hidden>📄</span>
         <span className="quick-label">P&ID</span>
       </button>
 
@@ -41,9 +39,10 @@ export default function QuickSidebar({ onAction }: Props) {
         aria-label="Incident Case Studies"
         title="Incident Case Studies"
       >
-        <span className="quick-icon" aria-hidden>⚠️</span>
+        <span className="quick-icon" aria-hidden>🧪</span>
         <span className="quick-label">Incidents</span>
       </button>
     </aside>
   );
+
 }
