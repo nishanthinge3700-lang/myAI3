@@ -10,7 +10,7 @@ export const MODEL = openai('gpt-4.1');
 //     model: fireworks('fireworks/deepseek-r1-0528'),
 //     middleware: extractReasoningMiddleware({ tagName: 'think' }), // Use this only when using Deepseek
 // });
-
+//
 
 function getDateAndTime(): string {
     const now = new Date();
